@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPT 智能转视频 - AI Powered</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="root">
+        <div class="glass-container">
+            <header>
+                <h1>PPT <span class="gradient-text">AI Video</span></h1>
+                <p>一键将幻灯片转化为生动的 AI 讲解视频</p>
+            </header>
+
+            <main>
+                <div id="upload-zone" class="upload-card">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" />
+                        </svg>
+                    </div>
+                    <h2>上传您的 PPTX 或 PDF 文件</h2>
+                    <p>支持多页幻灯片自动识别与讲解</p>
+                    <input type="file" id="file-input" accept=".pptx,.pdf" hidden>
+                    <button id="select-btn" class="primary-btn">选择文件</button>
+                    <div id="file-info" class="hidden">
+                        <span id="file-name"></span>
+                        <div class="voice-selector">
+                            <label for="voice-select">选择解说音色：</label>
+                            <select id="voice-select">
+                                <option value="Aoede">Aoede (女声 - 优雅/叙述)</option>
+                                <option value="Charon">Charon (男声 - 沉稳/专业)</option>
+                                <option value="Puck">Puck (活跃/动感)</option>
+                                <option value="Kore">Kore (女声 - 亲切)</option>
+                                <option value="Fenrir">Fenrir (男声 - 浑厚)</option>
+                                <option value="Zephyr">Zephyr (女声 - 欢快)</option>
+                                <option value="Alnilam">Alnilam (男声 - 激情)</option>
+                            </select>
+                        </div>
+                        <button id="process-btn" class="process-btn">开始合成</button>
+                    </div>
+                </div>
+
+                <div id="status-zone" class="hidden">
+                    <div class="loader-box">
+                        <div class="spinner"></div>
+                        <p id="status-text">AI 正在深度解析中...</p>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div id="progress-bar" class="progress-bar"></div>
+                    </div>
+                </div>
+
+                <div id="result-zone" class="hidden">
+                    <div class="success-icon">
+                        <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="#4ade80" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4L12 14.01l-3-3" />
+                        </svg>
+                    </div>
+                    <h2>合成成功！</h2>
+                    <video id="final-video" controls class="video-preview"></video>
+                    <a id="download-link" href="#" download class="primary-btn">下载视频</a>
+                    <button id="restart-btn" class="text-btn">转换另一个</button>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
